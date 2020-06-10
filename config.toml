@@ -1,0 +1,4 @@
+baseURL      = "http://example.org/"
+languageCode = "en-us"
+title        = "Everything is from zero"
+theme        = "m10c"

@@ -38,23 +38,39 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
     例如：我選擇[`Soho`🔗](https://themes.gohugo.io/soho/)的主題
 
 3. 下載主題並套用
-    
+
     3-1. 只要純粹下載主題資料夾到專案裡的`themes`資料夾內。
     ```shell
     > # 進入專案資料夾底下，下git語法
-    > git clone https://github.com/alexandrevicenzi/soho.git themes/soho
+    > git submodule add https://github.com/alexandrevicenzi/soho.git themes/soho
     ```
 
-    3-2. 並且在`config.toml`指定主題名稱即可完成。  
+    3-2. 並且在`config.toml`指定主題名稱即可完成。
     ```toml
-    # baseURL 與 title 改成自己的網址
-    baseURL      = "https://yam8511.github.io/zero/" 
+    baseURL      = "https://yam8511.github.io/zero/"
     languageCode = "en"
     title        = "Learn from ZerO"
     theme        = "soho" # <--- 加上剛剛下載的主題名稱
     ```
+    ps. 我們找到的主題上面都會有一些參數說明，可以依照作者提供的參數去定義連結、樣式的功能
 
-4. 新增第一份文章
+4. 設定網站標題`title`與基本網址`baseURL`
+
+    `baseURL` 用來設定自己網站的網址(像是Host)  
+    `baseURL`如果要跑在`GitHub`上，需填入的規則 = `https://[GitHub帳號].github.io/[專案名稱]/`  
+    例如: 帳號是 `yam8511`，專案名稱是 `zero`，`baseURL` = `https://yam8511.github.io/zero/`
+
+    `title` 就是... `網站標題`😂
+
+    ```toml
+    baseURL      = "https://yam8511.github.io/zero/" # <--- 輸入自己的GitHub網址
+    languageCode = "en"
+    title        = "Learn from ZerO" # <--- 自己的標語
+    theme        = "soho"
+    ```
+
+
+5. 新增第一份文章
 
     ```shell
     > # hugo new [檔案路徑/檔案名稱].md
@@ -63,7 +79,7 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 
     上面指令就會自動幫我們建立一個新檔案在`content`資料夾底下
 
-5. 啟動伺服器
+6. 啟動伺服器
 
         先啟動伺服器，預設會熱加載。
         一旦判斷檔案或config更動了，自動會重新載入。
@@ -71,16 +87,16 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 
     ```shell
     > hugo server -D
-                     | EN  
+                     | EN
     -------------------+-----
-    Pages            | 16  
-    Paginator pages  |  0  
-    Non-page files   |  0  
-    Static files     |  7  
-    Processed images |  0  
-    Aliases          |  1  
-    Sitemaps         |  1  
-    Cleaned          |  0  
+    Pages            | 16
+    Paginator pages  |  0
+    Non-page files   |  0
+    Static files     |  7
+    Processed images |  0
+    Aliases          |  1
+    Sitemaps         |  1
+    Cleaned          |  0
 
     Built in 48 ms
     Watching for changes in /Users/yingying/zero/zero/{archetypes,content,data,layouts,static,themes}
@@ -92,9 +108,11 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
     Press Ctrl+C to stop
     ```
 
-6. 開始瀏覽
-    打開瀏覽器，輸入`baseURL`的[網址](http://localhost:1313/)，  
-    以我為例就是`http://localhost:1313/zero/`
+7. 開始瀏覽
+
+    打開瀏覽器，輸入`http://localhost:1313/[專案名稱]/`  
+    以我為例就是`http://localhost:1313/zero/`  
+    其實小黑窗也會顯示網址給我們看，照打就好囉😅
 
 ---
 
@@ -125,7 +143,7 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 
 4. 到設定頁面設定`GitHub Pages`
 
-    4-1. 開啟GitHub個人專案的頁面之後，點擊`Settings`。  
+    4-1. 開啟GitHub個人專案的頁面之後，點擊`Settings`。
     ![GitHub > Settings](/zero/github_settings.png)
 
     4-2. 找到`GitHub Pages` > `Source`，選擇`master branch /docs folder`
@@ -134,21 +152,25 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 5. 大功告成
 
     等`GitHub`部署一會兒，即可在個人網址看到頁面囉。  
-
-    網址規則是
-    ```
-    https://[個人帳號].github.io/[專案名稱]
-
+    記得網址是 `https://[GitHub帳號].github.io/[專案名稱]/`  
     例如: https://yam8511.github.io/zero/
-    ```
 
 ---
 
 # 總結心得🤔
 
-其實從建立到部署到完成，不用幾分鐘就可以完成。對於架設一個簡單的部落格來說，非常快速，而且又很簡單👍   
+其實從建立到部署到完成，不用幾分鐘就可以完成。對於架設一個簡單的部落格來說，非常快速，而且又很簡單👍  
 除了一般寫文章以外，其實Hugo還提供了很多可以客製化樣式或資料的設計方式，讓每個人可以寫寫文章以外，還可以客製化自己美美的部落格樣貌✨  
 [官方文件🔗](https://gohugo.io/templates/introduction/)也非常齊全💯  
 (有機會再寫一篇文章介紹Hugo囉😂)  
 
 小弟自己覺得最大收益就是，用`Markdown`方式來寫文章，除了Hugo可以快速呈現頁面以外，其實對於工程師來說也方便撰寫，就算不顯示在網頁了，也能獨立打開`Markdown`檔案起來瀏覽文章。真是一箭雙鵰呀🤩  
+
+---
+
+# 後記
+如果之後clone自己的專案在其他地方，會發現`themes`的資料都是空的，是正常的唷，因為`themes`是`submodule`形式保存。  
+只需要在專案裡下`git`指令同步即可
+```shell
+> git submodule update --init --recursive
+```

@@ -11,7 +11,7 @@ enableEmoji = true
 author = "Zuolar (阿俊)"
 description = """
 隨手筆記、技術大小事、學習心得、生活趣事。
-\n熱衷於Go、樂於JS、玩於Python、始於C#
+熱衷於Go、樂於JS、玩於Python、始於C#
 """
 
 ## Set one of:
@@ -32,8 +32,6 @@ identifier = "posts"
 url = "/posts/"
 
 [taxonomies]
-category = "categories"
-series = "series"
 tag = "tags"
 
 [markup]

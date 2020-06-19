@@ -15,7 +15,7 @@
 <meta itemprop="description" content="平時看到很多網路上的大神們都會有自己紀錄技術相關經驗的文章，忽然覺得自己也可以記錄一下自己平時遇到的技術坑or防老(?)🧐">
 <meta itemprop="datePublished" content="2020-06-11T03:09:06&#43;08:00" />
 <meta itemprop="dateModified" content="2020-06-11T03:09:06&#43;08:00" />
-<meta itemprop="wordCount" content="259">
+<meta itemprop="wordCount" content="302">
 
 
 
@@ -82,7 +82,10 @@
       <h1>Learn from ZerO</h1>
 
       
-      <p class="lead">隨手筆記、技術大小事、學習心得、生活趣事</p>
+      <p class="lead">隨手筆記、技術大小事、學習心得、生活趣事。
+
+熱衷於Go、樂於JS、玩於Python、始於C#
+</p>
       
     </div>
 
@@ -143,13 +146,24 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 <p>下載主題並套用</p>
 <p>3-1. 只要純粹下載主題資料夾到專案裡的<code>themes</code>資料夾內。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; <span style="color:#75715e"># 進入專案資料夾底下，下git語法</span>
-&gt; git clone https://github.com/alexandrevicenzi/soho.git themes/soho
+&gt; git submodule add https://github.com/alexandrevicenzi/soho.git themes/soho
 </code></pre></div><p>3-2. 並且在<code>config.toml</code>指定主題名稱即可完成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#75715e"># baseURL 與 title 改成自己的網址</span>
-<span style="color:#a6e22e">baseURL</span>      = <span style="color:#e6db74">&#34;https://yam8511.github.io/zero/&#34;</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span>      = <span style="color:#e6db74">&#34;https://yam8511.github.io/zero/&#34;</span>
 <span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en&#34;</span>
 <span style="color:#a6e22e">title</span>        = <span style="color:#e6db74">&#34;Learn from ZerO&#34;</span>
 <span style="color:#a6e22e">theme</span>        = <span style="color:#e6db74">&#34;soho&#34;</span> <span style="color:#75715e"># &lt;--- 加上剛剛下載的主題名稱</span>
+</code></pre></div><p>ps. 我們找到的主題上面都會有一些參數說明，可以依照作者提供的參數去定義連結、樣式的功能</p>
+</li>
+<li>
+<p>設定網站標題<code>title</code>與基本網址<code>baseURL</code></p>
+<p><code>baseURL</code> 用來設定自己網站的網址(像是Host)<br>
+<code>baseURL</code>如果要跑在<code>GitHub</code>上，需填入的規則 = <code>https://[GitHub帳號].github.io/[專案名稱]/</code><br>
+例如: 帳號是 <code>yam8511</code>，專案名稱是 <code>zero</code>，<code>baseURL</code> = <code>https://yam8511.github.io/zero/</code></p>
+<p><code>title</code> 就是&hellip; <code>網站標題</code>😂</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span>      = <span style="color:#e6db74">&#34;https://yam8511.github.io/zero/&#34;</span> <span style="color:#75715e"># &lt;--- 輸入自己的GitHub網址</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en&#34;</span>
+<span style="color:#a6e22e">title</span>        = <span style="color:#e6db74">&#34;Learn from ZerO&#34;</span> <span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &lt;--- 自己的標語</span>
+<span style="color:#a6e22e">theme</span>        = <span style="color:#e6db74">&#34;soho&#34;</span>
 </code></pre></div></li>
 <li>
 <p>新增第一份文章</p>
@@ -164,16 +178,16 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
  馬上反應到頁面上，非常方便👍
 </code></pre>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; hugo server -D
-                 | EN  
+                 | EN
 -------------------+-----
-Pages            | <span style="color:#ae81ff">16</span>  
-Paginator pages  |  <span style="color:#ae81ff">0</span>  
-Non-page files   |  <span style="color:#ae81ff">0</span>  
-Static files     |  <span style="color:#ae81ff">7</span>  
-Processed images |  <span style="color:#ae81ff">0</span>  
-Aliases          |  <span style="color:#ae81ff">1</span>  
-Sitemaps         |  <span style="color:#ae81ff">1</span>  
-Cleaned          |  <span style="color:#ae81ff">0</span>  
+Pages            | <span style="color:#ae81ff">16</span>
+Paginator pages  |  <span style="color:#ae81ff">0</span>
+Non-page files   |  <span style="color:#ae81ff">0</span>
+Static files     |  <span style="color:#ae81ff">7</span>
+Processed images |  <span style="color:#ae81ff">0</span>
+Aliases          |  <span style="color:#ae81ff">1</span>
+Sitemaps         |  <span style="color:#ae81ff">1</span>
+Cleaned          |  <span style="color:#ae81ff">0</span>
 
 Built in <span style="color:#ae81ff">48</span> ms
 Watching <span style="color:#66d9ef">for</span> changes in /Users/yingying/zero/zero/<span style="color:#f92672">{</span>archetypes,content,data,layouts,static,themes<span style="color:#f92672">}</span>
@@ -185,9 +199,10 @@ Web Server is available at http://localhost:1313/zero/ <span style="color:#f9267
 Press Ctrl+C to stop
 </code></pre></div></li>
 <li>
-<p>開始瀏覽
-打開瀏覽器，輸入<code>baseURL</code>的<a href="http://localhost:1313/">網址</a>，<br>
-以我為例就是<code>http://localhost:1313/zero/</code></p>
+<p>開始瀏覽</p>
+<p>打開瀏覽器，輸入<code>http://localhost:1313/[專案名稱]/</code><br>
+以我為例就是<code>http://localhost:1313/zero/</code><br>
+其實小黑窗也會顯示網址給我們看，照打就好囉😅</p>
 </li>
 </ol>
 <hr>
@@ -215,19 +230,17 @@ Press Ctrl+C to stop
 </code></pre></div></li>
 <li>
 <p>到設定頁面設定<code>GitHub Pages</code></p>
-<p>4-1. 開啟GitHub個人專案的頁面之後，點擊<code>Settings</code>。<br>
+<p>4-1. 開啟GitHub個人專案的頁面之後，點擊<code>Settings</code>。
 <img src="/zero/github_settings.png" alt="GitHub > Settings"></p>
 <p>4-2. 找到<code>GitHub Pages</code> &gt; <code>Source</code>，選擇<code>master branch /docs folder</code>
 <img src="/zero/github_pages.png" alt="GitHub Pages > Source"></p>
 </li>
 <li>
 <p>大功告成</p>
-<p>等<code>GitHub</code>部署一會兒，即可在個人網址看到頁面囉。</p>
-<p>網址規則是</p>
-<pre><code>https://[個人帳號].github.io/[專案名稱]
-
-例如: https://yam8511.github.io/zero/
-</code></pre></li>
+<p>等<code>GitHub</code>部署一會兒，即可在個人網址看到頁面囉。<br>
+記得網址是 <code>https://[GitHub帳號].github.io/[專案名稱]/</code><br>
+例如: <a href="https://yam8511.github.io/zero/">https://yam8511.github.io/zero/</a></p>
+</li>
 </ol>
 <hr>
 <h1 id="總結心得">總結心得🤔</h1>
@@ -236,7 +249,12 @@ Press Ctrl+C to stop
 <a href="https://gohugo.io/templates/introduction/">官方文件🔗</a>也非常齊全💯<br>
 (有機會再寫一篇文章介紹Hugo囉😂)</p>
 <p>小弟自己覺得最大收益就是，用<code>Markdown</code>方式來寫文章，除了Hugo可以快速呈現頁面以外，其實對於工程師來說也方便撰寫，就算不顯示在網頁了，也能獨立打開<code>Markdown</code>檔案起來瀏覽文章。真是一箭雙鵰呀🤩</p>
-
+<hr>
+<h1 id="後記">後記</h1>
+<p>如果之後clone自己的專案在其他地方，會發現<code>themes</code>的資料都是空的，是正常的唷，因為<code>themes</code>是<code>submodule</code>形式保存。<br>
+只需要在專案裡下<code>git</code>指令同步即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; git submodule update --init --recursive
+</code></pre></div>
 </div>
 
 

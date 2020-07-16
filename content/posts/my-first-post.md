@@ -144,10 +144,12 @@ Hugo Static Site Generator v0.72.0/extended darwin/amd64 BuildDate: unknown
 4. 到設定頁面設定`GitHub Pages`
 
     4-1. 開啟GitHub個人專案的頁面之後，點擊`Settings`。
-    ![GitHub > Settings](/zero/github_settings.png)
+    ![](/zero/github_settings.png)
+    ![](/static/github_settings.png)
 
     4-2. 找到`GitHub Pages` > `Source`，選擇`master branch /docs folder`
-    ![GitHub Pages > Source](/zero/github_pages.png)
+    ![](/zero/github_pages.png)
+    ![](/static/github_pages.png)
 
 5. 大功告成
 

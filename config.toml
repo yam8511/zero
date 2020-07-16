@@ -11,12 +11,12 @@ enableEmoji = true
 author = "Zuolar (阿俊)"
 description = """
 隨手筆記、技術大小事、學習心得、生活趣事。
-熱衷於Go、樂於JS、玩於Python、始於C#
+科技來自人的懶性，技術來自人的集思廣益。
 """
 
 ## Set one of:
-gravatar = "yma8511@gmail.com"
-# profilePicture = "007.png"
+# gravatar = "yma8511@gmail.com"
+profilePicture = "zoular-gopher.png"
 
 [[params.socialIcons]]
 icon = "fa-github"

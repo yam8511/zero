@@ -1,7 +1,7 @@
 ---
 title: "Hugo + GitHub 簡易架設個人部落格"
 date: 2020-06-11T03:09:06+08:00
-draft: true
+draft: false
 tags: ["first", "hugo"]
 ---
 

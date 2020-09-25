@@ -16,7 +16,7 @@ description = """
 
 ## Set one of:
 # gravatar = "yma8511@gmail.com"
-profilePicture = "zoular-gopher.png"
+profilePicture = "zuolar-gopher.png"
 
 [[params.socialIcons]]
 icon = "fa-github"
